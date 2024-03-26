@@ -128,6 +128,7 @@ def menu():
     ciclo=True
     while ciclo:
      print('Ingresa las tablas en el siguiente orden por primera vez 7-6-5-1-3-2-4  ') 
+     print('Estudiante Jhonatan David Dueñas Rosero')
      print('''
       
       Menu
