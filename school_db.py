@@ -1,5 +1,4 @@
 import sqlite3
-
 import os
 
 # Especifica la ruta del archivo de la base de datos
@@ -68,6 +67,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS persons (
                     created_at DATETIME NOT NULL,
                     updated_at DATETIME NOT NULL,
                     deleled_at DATETIME NULL,
+                    FOREIGN KEY (id_ident_type) REFERENCES identification_types(id),
                         FOREIGN KEY (id_exp_city) REFERENCES cities(id),
                         FOREIGN KEY (id_user) REFERENCES users(id)
                     
@@ -92,8 +92,8 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS identification_types (
                     descrip VARCHAR(100) NOT NULL,
                     created_at DATETIME NOT NULL,
                     updated_at DATETIME NOT NULL,
-                    deleled_at DATETIME NULL,
-                    FOREIGN KEY (id) REFERENCES persons(id_ident_type)
+                    deleled_at DATETIME NULL
+                    
                     
                     )''')
 
